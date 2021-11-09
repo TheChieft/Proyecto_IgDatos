@@ -3,10 +3,11 @@
 
 
 import psycopg2
-from PythonConnect import Connection
+from Connection import Connection
 
 con = Connection()
 con.openConnection()
+conexion = con.cursor()
 
 try:
     sql1 = """select *
@@ -28,7 +29,7 @@ try:
 #Se ejecuta la sentencia para mostrar los nombres de los países
     
         
-    cursor = psycopg2.connect.cursor()
+    cursor = conexion.cursor()
     cursor.execute(sql1)
     records = cursor.fetchall()
     print("Total rows are:  ", len(records))
@@ -39,7 +40,7 @@ try:
             print("\n")
     
     
-    cursor = con.cursor()   #no se si este sobre
+    cursor = conexion.cursor()   #no se si este sobre
     cursor.execute(sql2)
     records = cursor.fetchall()
     print("Total rows are:  ", len(records))
@@ -50,7 +51,7 @@ try:
             print("Codigo_Dane_Departamento: ", row[2])
             print("\n")
             
-    cursor = con.cursor()   #no se si este sobre
+    cursor = conexion.cursor()   #no se si este sobre
     cursor.execute(sql3)
     records = cursor.fetchall()
     print("Total rows are:  ", len(records))
@@ -60,7 +61,7 @@ try:
             print("Nombre_arma ", row[1])
             print("\n")
     
-    cursor = con.cursor()   #no se si este sobre
+    cursor = conexion.cursor()   #no se si este sobre
     cursor.execute(sql4)
     records = cursor.fetchall()
     print("Total rows are:  ", len(records))
@@ -70,7 +71,7 @@ try:
             print("Nombre_genero ", row[1])
             print("\n")
             
-    cursor = con.cursor()   #no se si este sobre
+    cursor = conexion.cursor()   #no se si este sobre
     cursor.execute(sql5)
     records = cursor.fetchall()
     print("Total rows are:  ", len(records))
@@ -80,7 +81,7 @@ try:
             print("Nombre_grupo_etario ", row[1])
             print("\n")
             
-    cursor = con.cursor()   #no se si este sobre
+    cursor = conexion.cursor()   #no se si este sobre
     cursor.execute(sql6)
     records = cursor.fetchall()
     print("Total rows are:  ", len(records))
@@ -90,7 +91,7 @@ try:
             print("Nombre_tipo_homicidio ", row[1])
             print("\n")
             
-    cursor = con.cursor()   #no se si este sobre
+    cursor = conexion.cursor()   #no se si este sobre
     cursor.execute(sql7)
     records = cursor.fetchall()
     print("Total rows are:  ", len(records))

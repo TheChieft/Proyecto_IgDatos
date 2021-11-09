@@ -1,5 +1,5 @@
 
-from PythonConnect import Connection
+from Connection import Connection
 
 con = Connection()
 con.openConnection()
