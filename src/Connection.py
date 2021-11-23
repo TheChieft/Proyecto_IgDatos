@@ -9,9 +9,9 @@ class Connection:
         try:
             self.connection = psycopg2.connect(user="postgres",
 	                                               password="postgres",
-	                                               database="DBProject",
+	                                               database="Proyecto",
 	                                               host="localhost",
-	                                               port="5434")
+	                                               port="5432")
         except Exception as e:
             print (e)
 
